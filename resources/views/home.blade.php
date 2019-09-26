@@ -11,7 +11,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <p>FELICIDADES EL REGISTRO FUE EXITOSO Y YA ESTAS LOGEADO</p>
+                    <p>USTED SE ENCUENTRA REGISTRADO Y LOGGEADO</p>
                     <a href="/" class="btn btn-success">Menú</a>
                 </div>
             </div>

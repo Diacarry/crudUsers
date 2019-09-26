@@ -17,10 +17,15 @@
             <div class="">
                 <h2>{{ $title }}</h2>
             </div>
-            <div class="links">
-                <a href="/users">Gestion de usuarios</a>
-                <a href="/hobbies">Agregar Pasa Tiempos</a>
-            </div>
+            @auth
+                <div class="links">
+                    <a href="/users">Gestion de usuarios</a>
+                    <a href="/hobbies">Agregar Pasa Tiempos</a>
+                </div>
+            @endauth
+            @guest
+                <p>Para hacer uso del aplicativo debe estar registrado y loggeado</p>
+            @endguest
         </div>
     </div>
 @endsection

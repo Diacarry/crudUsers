@@ -4,7 +4,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ url('/home') }}">Status</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
                     @if (Route::has('register'))
@@ -13,7 +13,7 @@
                 @endauth
             </div>
         @endif
-        <h2>LISTADO DE USUARIOS REGISTRADOS</h2><br><br><br>
+        <h2>LISTADO DE USUARIOS REGISTRADOS</h2><br>
         <table class="table">
             <thead>
                 <tr>
@@ -21,6 +21,9 @@
                     <th scope="col">Nombres</th>
                     <th scope="col">NickName</th>
                     <th scope="col">Ciudad</th>
+                    <th scope="col">Perfil</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,6 +33,9 @@
                         <td>{{ $info->name }}</td>
                         <td>{{ $info->nickname }}</td>
                         <td>{{ $info->city }}</td>
+                        <td>{{ $info->perfil }}</td>
+                        <td><a href="/users/{{ $info->email }}/edit" class="btn btn-warning"></a></td>
+                        <td><a href="/users/{{ $info->email }}" class="btn btn-danger"></a></td>
                     </tr>
                 @empty
                     <tr>NO HAY DATA</tr>
