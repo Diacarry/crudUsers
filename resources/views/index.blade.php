@@ -18,8 +18,8 @@
                 <h2>{{ $title }}</h2>
             </div>
             <div class="links">
-                <a href="/">Gestion de usuarios</a>
-                <a href="/">Otra funcion</a>
+                <a href="/users">Gestion de usuarios</a>
+                <a href="/hobbies">Agregar Pasa Tiempos</a>
             </div>
         </div>
     </div>

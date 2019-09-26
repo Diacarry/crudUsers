@@ -11,4 +11,7 @@ class PagesController extends Controller {
             'title' => $titulo
         ]);
     }
+    public function data () {
+        return 'ubicar vista';
+    }
 }
