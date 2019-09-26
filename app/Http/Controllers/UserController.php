@@ -44,6 +44,7 @@ class UserController extends Controller {
     public function show($id) {
         /*$value = $request->session()->get('key');
         dd($value);*/
+        return 'show';
     }
     /**
      * Show the form for editing the specified resource.
@@ -90,6 +91,8 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        $registro = User::find($id);
+        $registro->delete();
+        return redirect('users');
     }
 }

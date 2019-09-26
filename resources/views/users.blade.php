@@ -35,7 +35,13 @@
                         <td>{{ $info->city }}</td>
                         <td>{{ $info->perfil }}</td>
                         <td><a href="/users/{{ $info->email }}/edit" class="btn btn-warning"></a></td>
-                        <td><a href="/users/{{ $info->email }}" class="btn btn-danger"></a></td>
+                        <td>
+                            <form action="/users/{{ $info->email }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger"></button>
+                            </form>
+                        </td>
                     </tr>
                 @empty
                     <tr>NO HAY DATA</tr>
