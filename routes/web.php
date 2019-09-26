@@ -11,12 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     $registros = [];
-    return view('users', ['data' => $registros]);
-});
+    return view('index', ['data' => $registros]);
+});*/
 
 
-Route::get('/prueba', 'PagesController@Home');
+Route::get('/', 'PagesController@Home');
 
 Route::resource('/users', 'UserController');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

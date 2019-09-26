@@ -15,7 +15,7 @@
         @endif
         <div class="text-center"><br>
             <div class="">
-                <h2>U2SOFTWARE TEST</h2>
+                <h2>{{ $title }}</h2>
             </div>
             <div class="links">
                 <a href="/">Gestion de usuarios</a>

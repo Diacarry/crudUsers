@@ -11,7 +11,10 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        //
+        $registro = [];
+        return view('users', [
+            'data' => $registro
+        ]);
     }
     /**
      * Show the form for creating a new resource.
