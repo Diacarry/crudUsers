@@ -15,3 +15,8 @@ Route::get('/', function () {
     $registros = [];
     return view('users', ['data' => $registros]);
 });
+
+
+Route::get('/prueba', 'PagesController@Home');
+
+Route::resource('/users', 'UserController');
