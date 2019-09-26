@@ -69,4 +69,10 @@ class User extends Authenticatable {
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /**
+     * Get the hobbies for the model hobby.
+     */
+    public function hobbies() {
+        return $this->hasMany('App\Hobby', 'fk_users', 'id');
+    }
 }
