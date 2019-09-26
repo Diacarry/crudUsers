@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $registros = [];
+    return view('users', ['data' => $registros]);
 });
