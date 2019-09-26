@@ -36,37 +36,37 @@
             <div class="form-group row">
                 <label for="inputB" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputB" name="inputB" placeholder="{{ $usuario->name }}" value="{{ old('inputB') }}">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="{{ $usuario->name }}" value="{{ $usuario->name }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputC" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputC" name="inputC" placeholder="Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 </div>
             </div>
             <!--<div class="form-group row">
                 <label for="inputD" class="col-sm-2 col-form-label">Repeat Password</label>
                 <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputD" name="inputD" placeholder="Repeat Password">
+                    <input type="password" class="form-control" id="passwordr" name="passwordr" placeholder="Repeat Password">
                 </div>
             </div>-->
             <div class="form-group row">
                 <label for="inputE" class="col-sm-2 col-form-label">NickName</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputE" name="inputE" placeholder="{{ $usuario->nickname }}" value="{{ old('inputE') }}">
+                    <input type="text" class="form-control" id="nickname" name="nickname" placeholder="{{ $usuario->nickname }}" value="{{ $usuario->nickname }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputF" class="col-sm-2 col-form-label">City</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputF" name="inputF" placeholder="{{ $usuario->city }}" value="{{ old('inputF') }}">
+                    <input type="text" class="form-control" id="city" name="city" placeholder="{{ $usuario->city }}" value="{{ $usuario->city }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputG" class="col-sm-2 col-form-label">Perfil => {{ $usuario->perfil }}</label>
                 <div class="col-sm-10">
-                    <select name="inputG" id="inputG" class="form-control">
+                    <select name="perfil" id="perfil" class="form-control">
                         <option value="">Elija un rol</option>
                         <option value="Usuario">Usuario</option>
                         <option value="Admin">Administrador</option>

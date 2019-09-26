@@ -66,21 +66,26 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        /*$validatedData = $request->validate([
-            'name' => 'required|min:8|max:255',
+        $validatedData = $request->validate([
+            'name'     => 'required|min:5|max:255',
             'password' => 'required|min:8|max:255',
-            'nickname' => 'required|min:8|max:255',
-            'city' => 'required|min:8|max:255',
-            'perfil' => 'required',
+            'nickname' => 'required|min:5|max:100',
+            'city'     => 'required|min:3|max:255',
+            'perfil'   => 'required',
         ]);
-        dd($validatedData);*/
+        /*if ($request->get('password') == $request->get('passwordr')){
+            dd('exito');
+        }
+        else {
+            dd('Fallo');
+        }*/
         $registro = User::find($id);
         $registro->email = $id;
-        $registro->name = $request->get('inputB');
-        $registro->password = Hash::make($request->get('inputC'));
-        $registro->nickname = $request->get('inputE');
-        $registro->city = $request->get('inputF');
-        $registro->perfil = $request->get('inputG');
+        $registro->name = $request->get('name');
+        $registro->password = Hash::make($request->get('password'));
+        $registro->nickname = $request->get('nickname');
+        $registro->city = $request->get('city');
+        $registro->perfil = $request->get('perfil');
         $registro->save();
         return redirect('users');
     }
