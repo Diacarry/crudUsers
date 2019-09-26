@@ -67,15 +67,15 @@ class UserController extends Controller {
      */
     public function update(Request $request, $id) {
         /*$validatedData = $request->validate([
-            'inputA' => 'required|unique:posts|max:255',
-            'inputB' => 'required',
-            'inputC' => 'required',
-            'inputE' => 'required',
-            'inputF' => 'required',
-            'inputG' => 'required',
-        ]);*/
+            'name' => 'required|min:8|max:255',
+            'password' => 'required|min:8|max:255',
+            'nickname' => 'required|min:8|max:255',
+            'city' => 'required|min:8|max:255',
+            'perfil' => 'required',
+        ]);
+        dd($validatedData);*/
         $registro = User::find($id);
-        $registro->email = $request->get('inputA');;
+        $registro->email = $id;
         $registro->name = $request->get('inputB');
         $registro->password = Hash::make($request->get('inputC'));
         $registro->nickname = $request->get('inputE');
