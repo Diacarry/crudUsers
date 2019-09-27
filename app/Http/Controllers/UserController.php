@@ -16,11 +16,16 @@ class UserController extends Controller {
     public function index() {
         $registro = User::all();
         $user = Auth::user();
-        return view('users', [
-            'data' => $registro,
-            'role' => $user->perfil,
-            'navigator' => $user->email
-        ]);
+        switch ($user->perfil) {
+            case 'Administrador': {
+                return view('users', [
+                    'data' => $registro,
+                    'user' => $user
+                ]);
+            }
+            case 'Usuario': { return redirect('hobbies'); }
+            default: { return redirect('index'); }
+        }
     }
     /**
      * Show the form for creating a new resource.

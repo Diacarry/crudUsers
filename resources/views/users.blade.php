@@ -4,7 +4,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/home') }}" class="btn btn-primary">Status</a>
+                    <a href="{{ url('/home') }}" class="btn btn-secondary">Cuenta</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
                     @if (Route::has('register'))
@@ -13,8 +13,7 @@
                 @endauth
             </div>
         @endif
-        <h2>LISTADO DE USUARIOS REGISTRADOS</h2>
-        <h4>Panel del {{ $role }}</h4>
+        <h2>LISTADO DE USUARIOS REGISTRADOS <a href="/" class="btn btn-info">Ir a menu</a></h2>
         <table class="table">
             <thead>
                 <tr>

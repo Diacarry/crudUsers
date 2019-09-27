@@ -14,21 +14,7 @@
             </div>
         @endif
         <div class="text-center"><br>
-            <div class="">
-                <h2>{{ $title }}</h2>
-            </div>
-            @auth
-                <div class="links">
-                    @if ($user->perfil == 'Administrador')
-                        <a href="/users">Gestion de Usuarios</a>
-                    @else
-                        <a href="/hobbies">Agregar Pasa Tiempos</a>
-                    @endif
-                </div>
-            @endauth
-            @guest
-                <p>Para hacer uso del aplicativo debe estar registrado y loggeado</p>
-            @endguest
+            
         </div>
     </div>
 @endsection

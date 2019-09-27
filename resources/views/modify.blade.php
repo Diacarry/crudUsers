@@ -4,7 +4,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/home') }}">Status</a>
+                    <a href="{{ url('/home') }}" class="btn btn-secondary">Cuenta</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
                     @if (Route::has('register'))
@@ -69,7 +69,7 @@
                     <select name="perfil" id="perfil" class="form-control">
                         <option value="">Elija un rol</option>
                         <option value="Usuario">Usuario</option>
-                        <option value="Admin">Administrador</option>
+                        <option value="Administrador">Administrador</option>
                     </select>
                 </div>
             </div>
