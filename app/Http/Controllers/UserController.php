@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,11 @@ class UserController extends Controller {
      */
     public function index() {
         $registro = User::all();
+        $user = Auth::user();
         return view('users', [
-            'data' => $registro
+            'data' => $registro,
+            'role' => $user->perfil,
+            'navigator' => $user->email
         ]);
     }
     /**
