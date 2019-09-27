@@ -16,7 +16,6 @@ class HobbyController extends Controller {
     public function index() {
         $user = Auth::user();
         $registros = User::find($user->email)->hobbies;
-        //dd($registros);
         return view('hobbies', [
             'data' => $registros,
             'user' => $user
