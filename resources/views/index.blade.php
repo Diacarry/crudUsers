@@ -21,9 +21,8 @@
                 <div class="links">
                     @if ($user->perfil == 'Administrador')
                         <a href="/users">Gestion de Usuarios</a>
-                    @else
-                        <a href="/hobbies">Agregar Pasa Tiempos</a>
                     @endif
+                    <a href="/hobbies">Agregar Pasa Tiempos</a>
                 </div>
             @endauth
             @guest

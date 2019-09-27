@@ -14,10 +14,10 @@ class PagesController extends Controller {
             'user' => $user
         ]);
     }
-    public function data () {
+    /*public function data () {
         $user = Auth::user();
         return view('hobbies', [
             'user' => $user
         ]);
-    }
+    }*/
 }

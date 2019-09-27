@@ -21,7 +21,7 @@ Route::get('/', 'PagesController@Home');
 
 Route::resource('/users', 'UserController');
 
-Route::get('/hobbies','PagesController@data');
+Route::resource('/hobbies','HobbyController');
 
 Auth::routes();
 
