@@ -11,7 +11,7 @@ class Hobby extends Model {
      *
      * @var string
      */
-    protected $table = 'hobies';
+    protected $table = 'hobbies';
     /**
      * The primary key associated with the table.
      *

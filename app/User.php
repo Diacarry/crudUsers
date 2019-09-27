@@ -73,6 +73,6 @@ class User extends Authenticatable {
      * Get the hobbies for the model hobby.
      */
     public function hobbies() {
-        return $this->hasMany('App\Hobby', 'fk_users', 'id');
+        return $this->hasMany('App\Hobby', 'fk_users', 'email');
     }
 }
