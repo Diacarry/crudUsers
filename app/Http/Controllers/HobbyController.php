@@ -9,21 +9,24 @@ use Illuminate\Http\Request;
 
 class HobbyController extends Controller {
     /**
+     * Metodo constructor
+     * Implementacion de middleware de autenticacion
+     */
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        if (Auth::check()) {
-            $user = Auth::user();
-            $registros = User::find($user->email)->hobbies;
-            return view('hobbies', [
-                'data' => $registros,
-                'user' => $user
-            ]);
-        } else {
-            return redirect('');
-        }
+        $user = Auth::user();
+        $registros = User::find($user->email)->hobbies;
+        return view('hobbies', [
+            'data' => $registros,
+            'user' => $user
+        ]);
     }
     /**
      * Show the form for creating a new resource.

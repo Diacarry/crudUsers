@@ -9,27 +9,30 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller {
     /**
+     * Metodo constructor
+     * Implementacion de middleware de autenticacion
+     */
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        if (Auth::check()) {
-            $registro = User::all();
-            $user = Auth::user();
-            switch ($user->perfil) {
-                case 'Administrador': {
-                    return view('users', [
-                        'data' => $registro,
-                        'user' => $user
-                    ]);
-                }
-                default: {
-                    return redirect('hobbies');
-                }
+        $user = Auth::user();
+        $registro = User::all();
+        switch ($user->perfil) {
+            case 'Administrador': {
+                return view('users', [
+                    'data' => $registro,
+                    'user' => $user
+                ]);
             }
-        } else {
-            return redirect('');
+            default: {
+                return redirect('hobbies');
+            }
         }
     }
     /**
@@ -38,7 +41,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+        return redirect('users');
     }
     /**
      * Store a newly created resource in storage.
