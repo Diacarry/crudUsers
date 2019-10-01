@@ -33,6 +33,13 @@ class LoginController extends Controller {
         $this->middleware('guest')->except('logout');
     }
     /**
+     * Personalizacion de nombre de usaurio
+     * Definición de variable de autenticación
+     */
+    /*public function username() {
+        return 'email';
+    }*/
+    /**
      * Motodo protector
      */
     /*protected function guard() {

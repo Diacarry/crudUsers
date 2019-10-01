@@ -14,17 +14,22 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $registro = User::all();
-        $user = Auth::user();
-        switch ($user->perfil) {
-            case 'Administrador': {
-                return view('users', [
-                    'data' => $registro,
-                    'user' => $user
-                ]);
+        if (Auth::check()) {
+            $registro = User::all();
+            $user = Auth::user();
+            switch ($user->perfil) {
+                case 'Administrador': {
+                    return view('users', [
+                        'data' => $registro,
+                        'user' => $user
+                    ]);
+                }
+                default: {
+                    return redirect('hobbies');
+                }
             }
-            case 'Usuario': { return redirect('hobbies'); }
-            default: { return redirect('index'); }
+        } else {
+            return redirect('');
         }
     }
     /**
@@ -51,9 +56,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        /*$value = $request->session()->get('key');
-        dd($value);*/
-        return 'show';
+        return redirect('users');
     }
     /**
      * Show the form for editing the specified resource.
@@ -89,7 +92,6 @@ class UserController extends Controller {
             dd('Fallo');
         }*/
         $registro = User::find($id);
-        $registro->email = $id;
         $registro->name = $request->get('name');
         $registro->password = Hash::make($request->get('password'));
         $registro->nickname = $request->get('nickname');

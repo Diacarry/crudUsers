@@ -14,12 +14,16 @@ class HobbyController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $user = Auth::user();
-        $registros = User::find($user->email)->hobbies;
-        return view('hobbies', [
-            'data' => $registros,
-            'user' => $user
-        ]);
+        if (Auth::check()) {
+            $user = Auth::user();
+            $registros = User::find($user->email)->hobbies;
+            return view('hobbies', [
+                'data' => $registros,
+                'user' => $user
+            ]);
+        } else {
+            return redirect('');
+        }
     }
     /**
      * Show the form for creating a new resource.
@@ -27,7 +31,7 @@ class HobbyController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return 'valido';
+        return redirect('hobbies');
     }
     /**
      * Store a newly created resource in storage.
@@ -53,7 +57,7 @@ class HobbyController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+        return redirect('hobbies');
     }
     /**
      * Show the form for editing the specified resource.
